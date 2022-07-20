@@ -1,6 +1,5 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from model import predict_speech
 import pickle
 try:
     from collections.abc import Mapping
@@ -9,6 +8,8 @@ except ImportError:
 
 app = Flask(__name__)
 model = pickle.load(open('model_dt_clf.pkl', 'rb'))
+pickle.load(open('model_dt_clf.pkl','rb'))
+cv = pickle.load(open('transform.pkl','rb'))
 
 @app.route('/')
 def home():
@@ -22,7 +23,8 @@ def predict():
     to_predict_list = request.form.to_dict()
 
     to_predict_list = list(to_predict_list.values())
-    prediction = predict_speech(str(to_predict_list))
+    data = cv.transform([str(to_predict_list)]).toarray()
+    prediction = model.predict(data)
 
 
 
