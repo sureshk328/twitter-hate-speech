@@ -1,7 +1,7 @@
 ## Twitter Hate Speech Detection ##
 Demo available at:
 </br>
-https://hate-speech-detection-dtf.herokuapp.com/predict
+https://hate-speech-detection-dtf.herokuapp.com/
 </br>
 ## Dataset Used ##
 https://www.kaggle.com/datasets/mrmorj/hate-speech-and-offensive-language-dataset
