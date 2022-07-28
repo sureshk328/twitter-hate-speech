@@ -3,7 +3,7 @@
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
-  <title>Twitter Hate Speech Detection</title>
+  <title>Hate Speech Detection</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -13,7 +13,7 @@
 
 <body>
  <div class="login">
-	<h1>Twitter Hate Speech Detection</h1>
+	<h1>Hate Speech Detection</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
@@ -26,6 +26,15 @@
    <br>
    <br>
    {{ prediction_text }}
+   <br>
+   {{ prediction_text_logreg }}
+   <br>
+   {{ prediction_text_knn }}
+   <br>
+   {{ prediction_text_svn }}
+   <br>
+   {{ prediction_text_dectree }}
+
 
  </div>
 
